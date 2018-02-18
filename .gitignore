@@ -1,0 +1,11 @@
+.gradle
+.groovy
+.project
+.settings
+.classpath
+*.swp
+bin/
+build/
+gradle/
+gradlew
+gradlew.bat

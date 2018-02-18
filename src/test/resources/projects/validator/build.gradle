@@ -1,0 +1,9 @@
+plugins {
+    id 'sbe-generator-plugin'
+}
+
+sbeGenerator {
+    src {
+//        dir = "abc"
+    }
+}

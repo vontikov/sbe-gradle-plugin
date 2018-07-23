@@ -1,9 +1,3 @@
 plugins {
-    id 'sbe-generator-plugin'
-}
-
-sbeGenerator {
-    src {
-//        dir = "abc"
-    }
+    id 'vontikov.sbe-generator-plugin'
 }

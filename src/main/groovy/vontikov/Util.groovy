@@ -13,7 +13,7 @@ final class Util {
     }
 
     static ConfigurableFileTree tree(Project project, Src src) {
-        def m = [dir: src.dir]
+        def m = [dir: src.dir, includes: ['*.xml']]
         if (src.includes) {
             m.put('includes', src.includes)
         }
@@ -32,11 +32,21 @@ final class Util {
         project.repositories.addAll(project.buildscript.repositories)
     }
 
-    static Configuration sbeDependency(Project project,
+    static Configuration addSbeDependency(Project project,
             SbeGeneratorPluginExtension extension, String configName) {
+        def logger = project.logger
+
+        def sbeVersion = project.getProperties().computeIfAbsent(PROJECT_PROPERTY_SBE_VERSION, 
+            {k -> DEFAULT_SBE_VERSION})
+
+        logger.info("Using SBE version: $sbeVersion")
+
+        def sbeAllArtifact = "uk.co.real-logic:sbe-all:$sbeVersion"
+        def sbeToolArtifact = "uk.co.real-logic:sbe-tool:$sbeVersion:sources"
+
         def config = project.getConfigurations().maybeCreate(configName)
-        project.getDependencies().add(config.getName(),
-                SBE_ARTIFACT + extension.sbeVersion)
+        project.getDependencies().add(config.getName(), sbeAllArtifact)
+        project.getDependencies().add(config.getName(), sbeToolArtifact)
         return config;
     }
 
@@ -45,8 +55,9 @@ final class Util {
         try {
             return project.files(config.getFiles())
         } catch (final Exception ex) {
+            def sbeVersion = project.getProperties().get(PROJECT_PROPERTY_SBE_VERSION)
             throw new IllegalArgumentException(
-            "SBE version '$extension.sbeVersion' not found")
+                "SBE '$sbeVersion' not found", ex)
         }
     }
 }

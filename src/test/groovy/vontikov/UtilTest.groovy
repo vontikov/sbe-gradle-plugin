@@ -1,7 +1,7 @@
 package vontikov
 
-import static vontikov.SbeGeneratorPlugin.*
 import static org.junit.Assert.*
+import static vontikov.Const.*
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
@@ -49,41 +49,6 @@ class UtilTest {
                 ['*.no'])
         def tree = Util.tree(project, src)
         assertTrue(tree.isEmpty())
-    }
-    
-    @Test
-    void shouldResolveDefaultSbeVersion() {
-        def project = ProjectBuilder.builder().build()
-        def extension = project.extensions.create(EXTENSION_NAME,
-                SbeGeneratorPluginExtension, project)
-
-        Util.prepareRepositories(project)
-        def config = Util.sbeDependency(project, extension, CONFIGURATION_NAME)
-        assertNotNull(Util.sbeClasspath(project, extension, config))
-    }
-
-    @Test
-    void shouldResolveSpecificSbeVersion() {
-        def project = ProjectBuilder.builder().build()
-        def extension = project.extensions.create(EXTENSION_NAME,
-                SbeGeneratorPluginExtension, project)
-        extension.sbeVersion = '1.7.5'
-
-        Util.prepareRepositories(project)
-        def config = Util.sbeDependency(project, extension, CONFIGURATION_NAME)
-        assertNotNull(Util.sbeClasspath(project, extension, config))
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    void shouldNotResolveIncorrectSbeVersion() {
-        def project = ProjectBuilder.builder().build()
-        def extension = project.extensions.create(EXTENSION_NAME,
-                SbeGeneratorPluginExtension, project)
-        extension.sbeVersion = '1.7'
-
-        Util.prepareRepositories(project)
-        def config = Util.sbeDependency(project, extension, CONFIGURATION_NAME)
-        Util.sbeClasspath(project, extension, config)
     }
 }
 

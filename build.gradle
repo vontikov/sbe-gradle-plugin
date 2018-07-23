@@ -1,41 +1,93 @@
-plugins {
-    id 'groovy'
-    id 'java-gradle-plugin'
-    id 'eclipse'
+buildscript {
+  repositories {
+    maven {
+      url 'https://plugins.gradle.org/m2/'
+    }
+  }
+  dependencies {
+    classpath 'com.gradle.publish:plugin-publish-plugin:0.9.10'
+  }
 }
 
-repositories {
-    jcenter()
-    mavenCentral()
+
+plugins {
+  id 'groovy'
+  id 'java-gradle-plugin'
+  id 'eclipse'
+  id 'idea'
+  id 'maven-publish'
+  id 'ivy-publish'
 }
-  
-group   = artifact_group
-version = "${artifact_version}"
+
+apply plugin: 'com.gradle.plugin-publish'
+
+repositories {
+  mavenLocal()
+  jcenter()
+  mavenCentral()
+}
+
+group = artifact_group
+version = artifact_version
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-task createClasspathManifest {
-    def outputDir = file("$buildDir/$name")
-
-    inputs.files sourceSets.main.runtimeClasspath
-    outputs.dir outputDir
-
-    doLast {
-        outputDir.mkdirs()
-        file("$outputDir/plugin-classpath.txt").text = 
-                sourceSets.main.runtimeClasspath.join('\n')
+gradlePlugin {
+  plugins {
+    sbeGenerator {
+      id = 'vontikov.sbe-generator-plugin'
+      implementationClass = 'vontikov.SbeGeneratorPlugin'
     }
+  }
+}
+
+pluginBundle {
+  website = 'https://github.com/vontikov/sbe-gradle-plugin/'
+  vcsUrl = 'https://github.com/vontikov/sbe-gradle-plugin/'
+  description = 'Simple Binary Encoding plugin'
+  tags = ['SBE', 'Simple Binary Encoding']
+
+  plugins {
+    sbeGenerator {
+      id = 'vontikov.sbe-generator-plugin'
+      displayName = 'Simple Binary Encoding plugin'
+    }
+  }
+}
+
+publishing {
+  repositories {
+    mavenLocal()
+  }
+}
+
+task createClasspathManifest {
+  def outputDir = file("$buildDir/$name")
+
+  inputs.files sourceSets.main.runtimeClasspath
+  outputs.dir outputDir
+
+  doLast {
+    outputDir.mkdirs()
+    file("$outputDir/plugin-classpath.txt").text =
+        sourceSets.main.runtimeClasspath.join('\n')
+  }
 }
 
 dependencies {
-    compile  'org.codehaus.groovy:groovy-all:2.4.12'
+  compile 'org.codehaus.groovy:groovy-all:2.4.12'
+  compile gradleApi()
+  compile localGroovy() 
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.hamcrest:hamcrest-all:1.3'
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.hamcrest:hamcrest-all:1.3'
 
-    testRuntime files(createClasspathManifest)
+  testRuntime files(createClasspathManifest)
+}
+
+clean.doFirst {
+  delete "${rootDir}/src/test/resources/projects/generator/build/"
 }
 
 defaultTasks 'clean', 'build'
-

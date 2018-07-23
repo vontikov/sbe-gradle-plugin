@@ -1,3 +1,6 @@
 plugins {
-    id 'sbe-generator-plugin'
+    id 'vontikov.sbe-generator-plugin'
 }
+
+group   = 'test-group' 
+version = '1.2.3' 

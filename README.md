@@ -1,16 +1,16 @@
-[Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) plugin for [Gradle Build Tool](https://gradle.org/) 
+[Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) plugin for [Gradle Build Tool](https://gradle.org/)
 ------------------------------------------
 Runs [SBE Tool](https://github.com/real-logic/simple-binary-encoding/wiki/Sbe-Tool-Guide)
-in a Gradle project. 
+in a Gradle project.
 
-Introduces a set of Gradle tasks which can be used to generate 
-[Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) 
-codecs for Java and C++. 
+Introduces a set of Gradle tasks which can be used to generate
+[Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding)
+codecs for Java and C++.
 
-Compiled Java codecs are packed into a jar file. 
+Compiled Java codecs are packed into a jar file.
 
-C++ codecs are delivered in a tarball, as a header-only 
-[CMake](https://cmake.org/)-ready library. 
+C++ codecs are delivered in a tarball, as a header-only
+[CMake](https://cmake.org/)-ready library.
 
 Usage
 -----
@@ -53,22 +53,22 @@ buildscript {
 }
 
 apply plugin: "vontikov.sbe-generator-plugin"
-                                                                                                       
-sbeGenerator {                                                                                      
-  src {                                                                                           
-    dir = 'src/main/resources/xml'                                           
-    includes = []                                              
-    excludes = []                                               
-  }                                                                                               
-                                                                                                       
-  javaCodecsDir = 'build/generated/src/main/java'                              
-  javaClassesDir = 'build/generated/classes'                                   
-                                                                                                       
-  cppCodecsDir = 'build/generated/src/main/cpp1'                               
-  cppCmakeDir = 'build/generated/cmake-project'                                
-                                                                                                       
-  archivesDir = 'build/archives'                                             
-}                                
+
+sbeGenerator {
+  src {
+    dir = 'src/main/resources/xml'
+    includes = []
+    excludes = []
+  }
+
+  javaCodecsDir = 'build/generated/src/main/java'
+  javaClassesDir = 'build/generated/classes'
+
+  cppCodecsDir = 'build/generated/src/main/cpp1'
+  cppCmakeDir = 'build/generated/cmake-project'
+
+  archivesDir = 'build/archives'
+}
 ```
 
 #### SBE version
@@ -76,7 +76,7 @@ sbeGenerator {
 #
 # gradle.properties
 #
-sbe_version=1.8.5
+sbe_version=1.8.7
 ```
 
 #### SBE Generator tasks

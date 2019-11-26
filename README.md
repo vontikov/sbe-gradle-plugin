@@ -68,8 +68,21 @@ sbeGenerator {
   cppCmakeDir = 'build/generated/cmake-project'
 
   archivesDir = 'build/archives'
+  
+  javaOptions = [] // e.g. ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
+  cppOptions = []  // e.g. ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
 }
 ```
+
+Java or CPP options should be provided in Groovy map format.
+For example:
+
+```Groovy
+javaOptions = ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
+cppOptions = ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
+```
+The full list of options is [here](https://github.com/real-logic/simple-binary-encoding/wiki/Sbe-Tool-Guide)
+
 
 #### SBE version
 ```

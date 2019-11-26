@@ -87,9 +87,9 @@ class SbeGeneratorPlugin implements Plugin<Project> {
                 'sbe.target.language': 'Java',
                 'sbe.output.dir': ext.javaCodecsDir,
             ]
-            if (ext.targetNamespace) {
-                props.put('sbe.target.namespace', ext.targetNamespace)
-            }
+
+            def opts = ext.properties.get('javaOptions')
+            opts.every { key, value -> props.putIfAbsent(key, value) }
 
             systemProperties = props
             main = 'uk.co.real_logic.sbe.SbeTool'
@@ -142,12 +142,11 @@ class SbeGeneratorPlugin implements Plugin<Project> {
 
             def props = [
                 'sbe.target.language': 'CPP',
-                'sbe.cpp.namespaces.collapse': 'true',
                 'sbe.output.dir': ext.cppCodecsDir,
             ]
-            if (ext.targetNamespace) {
-                props.put('sbe.target.namespace', ext.targetNamespace)
-            }
+
+            def opts = ext.properties.get('cppOptions')
+            opts.every { key, value -> props.putIfAbsent(key, value) }
 
             systemProperties = props
             main = 'uk.co.real_logic.sbe.SbeTool'
@@ -170,21 +169,6 @@ class SbeGeneratorPlugin implements Plugin<Project> {
                 project.copy {
                     into(project.file("${ext.cppCmakeDir}/include/"))
                     from(project.file(ext.cppCodecsDir))
-                }
-
-                // sbe.h
-                def sbeToolJar = sbeClasspath.filter {
-                    it.name.matches('sbe-tool-[0-9.]+-sources\\.jar')
-                }.singleFile
-                def hdrFile = project.zipTree(sbeToolJar).matching {
-                    include '**/sbe.h'
-                }.singleFile
-                if (!hdrFile) {
-                    throw new IllegalStateException('SBE header not found')
-                }
-                project.copy {
-                    into(project.file("${ext.cppCmakeDir}/include/sbe/"))
-                    from(hdrFile)
                 }
 
                 // copy scripts
@@ -219,7 +203,7 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             description = 'Packs generated C++ codecs'
 
             from {
-                project.files(ext.cppCmakeDir) 
+                project.files(ext.cppCmakeDir)
             }
 
             destinationDir = project.file(ext.archivesDir)

@@ -48,7 +48,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.vontikov:sbe-generator-plugin:0.0.1"
+    classpath "gradle.plugin.vontikov:sbe-generator-plugin:0.0.3"
   }
 }
 
@@ -68,15 +68,28 @@ sbeGenerator {
   cppCmakeDir = 'build/generated/cmake-project'
 
   archivesDir = 'build/archives'
+  
+  javaOptions = [:] 
+  cppOptions = [:]  
 }
 ```
+
+Java or CPP options should be provided in Groovy map format.
+For example:
+
+```Groovy
+javaOptions = ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
+cppOptions = ['sbe.generate.ir': 'true']
+```
+The full list of options is [here](https://github.com/real-logic/simple-binary-encoding/wiki/Sbe-Tool-Guide)
+
 
 #### SBE version
 ```
 #
 # gradle.properties
 #
-sbe_version=1.8.7
+sbe_version=1.15.0
 ```
 
 #### SBE Generator tasks
@@ -94,7 +107,7 @@ sbe_version=1.8.7
 License (See LICENSE file for full license)
 ------------------------------------------
 
-Copyright 2018 Vladimir Ontikov
+Copyright 2018-2019 Vladimir Ontikov
 
 Licensed under the MIT License
 

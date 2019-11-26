@@ -57,7 +57,8 @@ class PluginTest {
                 + '/' + DEFAULT_JAVA_CODECS_DIR)
         def stubs = project.fileTree(dir: stubsDir).files.name.toSet()
 
-        assertThat(stubs, hasSize(5));
+        assertThat(stubs, hasSize(6));
+        assertThat(stubs, hasItem('package-info.java'))
         assertThat(stubs, hasItem('MessageHeaderDecoder.java'))
         assertThat(stubs, hasItem('MessageHeaderEncoder.java'))
         assertThat(stubs, hasItem('MetaAttribute.java'))
@@ -144,8 +145,9 @@ class PluginTest {
         def classes = project.zipTree(archiveName).files.name.toSet()
         classes.removeAll { it.contains('$') }
 
-        assertThat(classes, hasSize(11));
+        assertThat(classes, hasSize(12));
         assertThat(classes, hasItem('MANIFEST.MF'))
+        assertThat(classes, hasItem('package-info.java'))
 
         assertThat(classes, hasItem('MessageHeaderDecoder.java'))
         assertThat(classes, hasItem('MessageHeaderEncoder.java'))

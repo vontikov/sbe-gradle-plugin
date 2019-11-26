@@ -76,7 +76,7 @@ task createClasspathManifest {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy-all:2.4.12'
+  compile 'org.codehaus.groovy:groovy-all:2.5.8'
   compile gradleApi()
   compile localGroovy() 
 

@@ -2,7 +2,7 @@ package vontikov
 
 final class Const {
 
-    static final DEFAULT_SBE_VERSION = '1.15.0'
+    static final DEFAULT_SBE_VERSION = '1.17.0'
 
     static final PLUGIN_ID = 'sbe.generator'
     static final PLUGIN_GROUP = 'SBE Generator'

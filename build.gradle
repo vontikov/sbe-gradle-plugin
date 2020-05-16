@@ -5,7 +5,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath 'com.gradle.publish:plugin-publish-plugin:0.9.10'
+    classpath 'com.gradle.publish:plugin-publish-plugin:0.11.0'
   }
 }
 
@@ -30,8 +30,8 @@ repositories {
 group = artifact_group
 version = artifact_version
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.13
+targetCompatibility = 1.13
 
 gradlePlugin {
   plugins {
@@ -76,7 +76,7 @@ task createClasspathManifest {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy-all:2.5.8'
+  compile 'org.codehaus.groovy:groovy-all:3.0.3'
   compile gradleApi()
   compile localGroovy() 
 

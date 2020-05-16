@@ -1,3 +1,8 @@
+v0.0.4
+------
+Upgrade to SBE 1.17.0
+Upgrade to Groovy 3.0.3
+
 v0.0.3
 ------
 [Upgrade to SBE 1.15.0](https://github.com/vontikov/sbe-gradle-plugin/issues/3)

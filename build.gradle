@@ -30,8 +30,8 @@ repositories {
 group = artifact_group
 version = artifact_version
 
-sourceCompatibility = 1.13
-targetCompatibility = 1.13
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 gradlePlugin {
   plugins {

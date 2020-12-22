@@ -1,6 +1,7 @@
 v0.0.5
 ------
 Fix unit tests
+Make Java 8 compatible
 
 v0.0.4
 ------

@@ -1,3 +1,7 @@
+v0.0.5
+------
+Fix unit tests
+
 v0.0.4
 ------
 Upgrade to SBE 1.17.0

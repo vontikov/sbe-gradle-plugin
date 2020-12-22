@@ -1,5 +1,5 @@
 plugins {
-    id 'vontikov.sbe-generator-plugin'
+  id 'com.github.vontikov.sbe-generator-plugin'
 }
 
 group   = 'test-group' 

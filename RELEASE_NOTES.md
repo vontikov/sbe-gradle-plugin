@@ -4,6 +4,7 @@ Fix unit tests
 Make Java 8 compatible
 Upgrade to SBE 1.20.3
 Upgrade to Groovy 3.0.7
+Make build script Gradle 7.0 compatible
 
 v0.0.4
 ------

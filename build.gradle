@@ -36,7 +36,7 @@ targetCompatibility = 1.13
 gradlePlugin {
   plugins {
     sbeGenerator {
-      id = 'vontikov.sbe-generator-plugin'
+      id = 'com.github.vontikov.sbe-generator-plugin'
       implementationClass = 'vontikov.SbeGeneratorPlugin'
     }
   }
@@ -50,7 +50,7 @@ pluginBundle {
 
   plugins {
     sbeGenerator {
-      id = 'vontikov.sbe-generator-plugin'
+      id = 'com.github.vontikov.sbe-generator-plugin'
       displayName = 'Simple Binary Encoding plugin'
     }
   }

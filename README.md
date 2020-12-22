@@ -12,15 +12,25 @@ Compiled Java codecs are packed into a jar file.
 C++ codecs are delivered in a tarball, as a header-only
 [CMake](https://cmake.org/)-ready library.
 
+Plugin site: https://plugins.gradle.org/plugin/com.github.vontikov.sbe-generator-plugin
+
 Usage
 -----
 
-#### Minimum configuration
+#### Plugins DSL
 
 ```Groovy
-//
-// build.gradle
-//
+
+plugins {
+  id "com.github.vontikov.sbe-generator-plugin" version "0.0.4"
+}
+```
+
+#### Legacy plugin application
+
+
+```Groovy
+
 buildscript {
   repositories {
     maven {
@@ -28,11 +38,11 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.vontikov:sbe-generator-plugin:0.0.4"
+    classpath "vontikov:sbe-generator-plugin:0.0.4"
   }
 }
 
-apply plugin: "vontikov.sbe-generator-plugin"
+apply plugin: "com.github.vontikov.sbe-generator-plugin"
 ```
 
 #### Full configuration
@@ -48,11 +58,11 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.vontikov:sbe-generator-plugin:0.0.4"
+    classpath "vontikov:sbe-generator-plugin:0.0.4"
   }
 }
 
-apply plugin: "vontikov.sbe-generator-plugin"
+apply plugin: "com.github.vontikov.sbe-generator-plugin"
 
 sbeGenerator {
   src {

@@ -3,6 +3,7 @@ v0.0.5
 Fix unit tests
 Make Java 8 compatible
 Upgrade to SBE 1.20.3
+Upgrade to Groovy 3.0.7
 
 v0.0.4
 ------

@@ -76,9 +76,9 @@ task createClasspathManifest {
 }
 
 dependencies {
-  compile 'org.codehaus.groovy:groovy-all:3.0.3'
+  compile 'org.codehaus.groovy:groovy-all:3.0.7'
   compile gradleApi()
-  compile localGroovy() 
+  compile localGroovy()
 
   testCompile 'junit:junit:4.12'
   testCompile 'org.hamcrest:hamcrest-all:1.3'

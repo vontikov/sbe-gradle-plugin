@@ -1,9 +1,9 @@
-package vontikov
+package com.github.vontikov
 
 import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI
 
-import static vontikov.Const.*
-import static vontikov.Util.*
+import static com.github.vontikov.Const.*
+import static com.github.vontikov.Util.*
 
 import javax.xml.transform.stream.StreamSource
 import javax.xml.validation.SchemaFactory

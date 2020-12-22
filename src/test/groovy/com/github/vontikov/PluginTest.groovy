@@ -1,9 +1,9 @@
-package vontikov
+package com.github.vontikov
 
 import static org.gradle.testkit.runner.TaskOutcome.*
 import static org.hamcrest.Matchers.*
 import static org.junit.Assert.*
-import static vontikov.Const.*
+import static com.github.vontikov.Const.*
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.gradle.testkit.runner.GradleRunner

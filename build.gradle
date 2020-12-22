@@ -37,7 +37,7 @@ gradlePlugin {
   plugins {
     sbeGenerator {
       id = 'com.github.vontikov.sbe-generator-plugin'
-      implementationClass = 'vontikov.SbeGeneratorPlugin'
+      implementationClass = 'com.github.vontikov.SbeGeneratorPlugin'
     }
   }
 }

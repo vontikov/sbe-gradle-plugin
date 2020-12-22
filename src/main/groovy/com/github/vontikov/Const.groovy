@@ -1,4 +1,4 @@
-package vontikov
+package com.github.vontikov
 
 final class Const {
 

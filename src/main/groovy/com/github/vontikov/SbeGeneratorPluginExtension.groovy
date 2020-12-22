@@ -1,6 +1,6 @@
-package vontikov
+package com.github.vontikov
 
-import static vontikov.Const.*
+import static com.github.vontikov.Const.*
 
 import javax.naming.spi.ObjectFactory
 

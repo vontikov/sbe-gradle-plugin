@@ -1,7 +1,7 @@
-package vontikov
+package com.github.vontikov
 
 import static org.junit.Assert.*
-import static vontikov.Const.*
+import static com.github.vontikov.Const.*
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test

@@ -2,6 +2,7 @@ v0.0.5
 ------
 Fix unit tests
 Make Java 8 compatible
+Upgrade to SBE 1.20.3
 
 v0.0.4
 ------

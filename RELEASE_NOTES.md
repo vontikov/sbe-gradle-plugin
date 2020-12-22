@@ -6,6 +6,7 @@ Upgrade to SBE 1.20.3
 Upgrade to Groovy 3.0.7
 Make build script Gradle 7.0 compatible
 Rename packages
+Upgrade to Gradle Plugin Publishing Plugin 0.12.0
 
 v0.0.4
 ------

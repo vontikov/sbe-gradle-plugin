@@ -38,7 +38,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "vontikov:sbe-generator-plugin:0.0.5"
+    classpath "com.github.vontikov:sbe-generator-plugin:0.0.5"
   }
 }
 
@@ -58,7 +58,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "vontikov:sbe-generator-plugin:0.0.5"
+    classpath "com.github.vontikov:sbe-generator-plugin:0.0.5"
   }
 }
 

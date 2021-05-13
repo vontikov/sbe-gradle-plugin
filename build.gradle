@@ -80,7 +80,7 @@ dependencies {
   implementation gradleApi()
   implementation localGroovy()
 
-  testImplementation 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.13.2'
   testImplementation 'org.hamcrest:hamcrest-all:1.3'
 
   testRuntimeOnly files(createClasspathManifest)

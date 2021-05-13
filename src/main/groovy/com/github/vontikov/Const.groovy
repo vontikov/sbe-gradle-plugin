@@ -45,6 +45,8 @@ final class Const {
     static final DEFAULT_JAVA_SOURCE_COMPATIBILITY = '1.8'
     static final DEFAULT_JAVA_TARGET_COMPATIBILITY = '1.8'
 
+    static final DEFAULT_SHOULD_VALIDATE = true
+
     static final PROJECT_PROPERTY_SBE_VERSION = 'sbe_version'
 
     private Const() {

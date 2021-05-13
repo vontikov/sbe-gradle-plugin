@@ -41,6 +41,8 @@ class SbeGeneratorPluginExtension {
     def javaOptions = [:]
     def cppOptions = [:]
 
+    def shouldValidate = DEFAULT_SHOULD_VALIDATE
+
     SbeGeneratorPluginExtension(Project project) {
     }
 

@@ -35,7 +35,10 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             sbeClasspath = sbeClasspath(project, ext, cfg)
             input = tree(project, ext.src).files.absolutePath.toSet()
 
-            validateTask(project)
+            def shouldValidate = ext.properties.get('shouldValidate')
+            if (shouldValidate) {
+                validateTask(project)
+            }
 
             genJavaTask(project, ext)
             compileJavaTask(project, ext)

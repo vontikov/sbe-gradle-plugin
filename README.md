@@ -48,6 +48,7 @@ apply plugin: "com.github.vontikov.sbe-generator-plugin"
 #### Full configuration
 
 ```Groovy
+
 //
 // build.gradle
 //
@@ -81,7 +82,9 @@ sbeGenerator {
 
   javaOptions = [:]
   cppOptions = [:]
-}
+
+  // enable or disable validation (enabled by default)
+  shouldValidate = true
 ```
 
 Java or CPP options should be provided in Groovy map format.
@@ -99,7 +102,7 @@ The full list of options is [here](https://github.com/real-logic/simple-binary-e
 #
 # gradle.properties
 #
-sbe_version=1.20.3
+sbe_version=1.22.0
 ```
 
 #### SBE Generator tasks
@@ -122,7 +125,7 @@ https://github.com/vontikov/sbe-example
 License (See LICENSE file for full license)
 ------------------------------------------
 
-Copyright 2018-2020 Vladimir Ontikov
+Copyright 2018-2021 Vladimir Ontikov
 
 Licensed under the MIT License
 

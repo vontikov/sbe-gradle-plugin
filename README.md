@@ -85,6 +85,7 @@ sbeGenerator {
 
   // enable or disable validation (enabled by default)
   shouldValidate = true
+}
 ```
 
 Java or CPP options should be provided in Groovy map format.

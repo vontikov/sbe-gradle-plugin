@@ -74,8 +74,12 @@ task createClasspathManifest {
   }
 }
 
+configurations {
+  all*.exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+}
+
 dependencies {
-  implementation 'org.codehaus.groovy:groovy-all:3.0.7'
+  implementation 'org.codehaus.groovy:groovy-all:3.0.8'
   implementation gradleApi()
   implementation localGroovy()
 

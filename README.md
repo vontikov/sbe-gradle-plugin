@@ -122,14 +122,3 @@ Example
 ------------------------------------------
 
 https://github.com/vontikov/sbe-example
-
-License (See LICENSE file for full license)
-------------------------------------------
-
-Copyright 2018-2021 Vladimir Ontikov
-
-Licensed under the MIT License
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.

@@ -108,7 +108,7 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             description = COMPILE_JAVA_DESCRIPTION
 
             source = project.fileTree(dir: ext.javaCodecsDir, include: '**/*.java')
-            destinationDir = project.file(ext.javaClassesDir)
+            destinationDirectory = project.file(ext.javaClassesDir)
             sourceCompatibility = ext.javaSourceCompatibility
             targetCompatibility = ext.javaTargetCompatibility
             classpath = sbeClasspath
@@ -125,8 +125,8 @@ class SbeGeneratorPlugin implements Plugin<Project> {
                 project.files(ext.javaClassesDir, ext.javaCodecsDir)
             }
 
-            destinationDir = project.file(ext.archivesDir)
-            archiveName = "${project.name}-${project.version}.jar"
+            destinationDirectory = project.file(ext.archivesDir)
+            archiveFileName = "${project.name}-${project.version}.jar"
 
             manifest {
                 attributes(
@@ -209,8 +209,8 @@ class SbeGeneratorPlugin implements Plugin<Project> {
                 project.files(ext.cppCmakeDir)
             }
 
-            destinationDir = project.file(ext.archivesDir)
-            archiveName = "${project.name}-${project.version}.tar.gz"
+            destinationDirectory = project.file(ext.archivesDir)
+            archiveFileName = "${project.name}-${project.version}.tar.gz"
 
             compression = Compression.GZIP
         }

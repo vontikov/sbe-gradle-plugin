@@ -1,14 +1,3 @@
-buildscript {
-  repositories {
-    maven {
-      url 'https://plugins.gradle.org/m2/'
-    }
-  }
-  dependencies {
-    classpath 'com.gradle.publish:plugin-publish-plugin:0.14.0'
-  }
-}
-
 plugins {
   id 'groovy'
   id 'java-gradle-plugin'
@@ -16,9 +5,8 @@ plugins {
   id 'idea'
   id 'maven-publish'
   id 'ivy-publish'
+  id 'com.gradle.plugin-publish' version '1.1.0'
 }
-
-apply plugin: 'com.gradle.plugin-publish'
 
 repositories {
   mavenLocal()
@@ -28,28 +16,19 @@ repositories {
 group = artifact_group
 version = artifact_version
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.17
+targetCompatibility = 1.17
 
 gradlePlugin {
-  plugins {
-    sbeGenerator {
-      id = 'com.github.vontikov.sbe-generator-plugin'
-      implementationClass = 'com.github.vontikov.SbeGeneratorPlugin'
-    }
-  }
-}
-
-pluginBundle {
   website = 'https://github.com/vontikov/sbe-gradle-plugin/'
   vcsUrl = 'https://github.com/vontikov/sbe-gradle-plugin/'
-  description = 'Simple Binary Encoding plugin'
-  tags = ['SBE', 'Simple Binary Encoding']
-
   plugins {
-    sbeGenerator {
+    gradletestPlugin {
       id = 'com.github.vontikov.sbe-generator-plugin'
       displayName = 'Simple Binary Encoding plugin'
+      description = 'Simple Binary Encoding plugin'
+      tags.addAll('SBE', 'Simple Binary Encoding')
+      implementationClass = 'com.github.vontikov.SbeGeneratorPlugin'
     }
   }
 }
@@ -78,14 +57,27 @@ configurations {
 }
 
 dependencies {
-  implementation 'org.codehaus.groovy:groovy-all:3.0.8'
-  implementation gradleApi()
-  implementation localGroovy()
+//  implementation 'org.codehaus.groovy:groovy-all:3.0.8'
+//  implementation gradleApi()
+//  implementation localGroovy()
 
-  testImplementation 'junit:junit:4.13.2'
-  testImplementation 'org.hamcrest:hamcrest-all:1.3'
+//  testImplementation 'junit:junit:4.13.2'
+//  testImplementation 'org.hamcrest:hamcrest-all:1.3'
 
+//  testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+  testImplementation(platform('org.junit:junit-bom:5.10.0'))
+  testImplementation('org.junit.jupiter:junit-jupiter')
+  testImplementation 'org.hamcrest:hamcrest-library:2.2'
+
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
   testRuntimeOnly files(createClasspathManifest)
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    events "passed", "skipped", "failed"
+  }
 }
 
 clean.doFirst {

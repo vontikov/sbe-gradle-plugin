@@ -2,12 +2,15 @@ package com.github.vontikov
 
 import static org.gradle.testkit.runner.TaskOutcome.*
 import static org.hamcrest.Matchers.*
-import static org.junit.Assert.*
 import static com.github.vontikov.Const.*
+import static org.hamcrest.MatcherAssert.assertThat
+
+import java.io.File
+import java.lang.System
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.gradle.testkit.runner.GradleRunner
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class PluginTest {
 

@@ -1,11 +1,20 @@
+v0.0.7
+------
+
+ - Upgrade to Gradle 8
+ - Upgrade to JUnit 5.10
+ - Upgrade to SBE 1.29.0
+ - Exclude unused dependencies
+
 v0.0.6
 ------
-Upgrade to SBE 1.22.0
-Upgrade to JUnit 4.13.2
-Exlude JCenter repository
-Upgrade to Groovy 3.0.8
-Upgrade to plugin-publish-plugin 0.14.0
-Conditionally disable XML validation
+
+ - Upgrade to SBE 1.22.0
+ - Upgrade to JUnit 4.13.2
+ - Exlude JCenter repository
+ - Upgrade to Groovy 3.0.8
+ - Upgrade to plugin-publish-plugin 0.14.0
+ - Conditionally disable XML validation
 
 v0.0.5
 ------

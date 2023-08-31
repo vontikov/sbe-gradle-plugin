@@ -1,10 +1,14 @@
 package com.github.vontikov
 
-import static org.junit.Assert.*
+import static org.hamcrest.MatcherAssert.assertThat
+import static org.hamcrest.Matchers.*
+
 import static com.github.vontikov.Const.*
 
+import java.lang.System
+
 import org.gradle.testfixtures.ProjectBuilder
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class UtilTest {
 
@@ -16,7 +20,7 @@ class UtilTest {
         def src = new Src(USER_DIR + '/src/test/resources/xml/util_all')
 
         def tree = Util.tree(project, src)
-        assertEquals(3, tree.size())
+		assertThat(3, equalTo(tree.size()))
     }
 
     @Test
@@ -27,7 +31,7 @@ class UtilTest {
                 USER_DIR + '/src/test/resources/xml/util_some',
                 ['*.txt', '*.lst'])
         def tree = Util.tree(project, src)
-        assertEquals(2, tree.size())
+		assertThat(2, equalTo(tree.size()))
     }
 
     @Test
@@ -38,7 +42,7 @@ class UtilTest {
                 [],
                 ['*.txt', '*.lst'])
         def tree = Util.tree(project, src)
-        assertEquals(3, tree.size())
+		assertThat(3, equalTo(tree.size()))
     }
 
     @Test
@@ -48,7 +52,6 @@ class UtilTest {
                 USER_DIR + '/src/test/resources/xml/util_some',
                 ['*.no'])
         def tree = Util.tree(project, src)
-        assertTrue(tree.isEmpty())
+        assertThat(tree.isEmpty(), is(true))
     }
 }
-

@@ -36,7 +36,7 @@ final class Util {
             SbeGeneratorPluginExtension extension, String configName) {
         def logger = project.logger
 
-        def sbeVersion = project.getProperties().computeIfAbsent(PROJECT_PROPERTY_SBE_VERSION, 
+        def sbeVersion = project.getProperties().computeIfAbsent(PROJECT_PROPERTY_SBE_VERSION,
             {k -> DEFAULT_SBE_VERSION})
 
         logger.info("Using SBE version: $sbeVersion")

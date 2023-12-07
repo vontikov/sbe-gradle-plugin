@@ -92,7 +92,7 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             ]
 
             def opts = ext.properties.get('javaOptions')
-            opts.every { key, value -> props.putIfAbsent(key, value) }
+            opts.each { key, value -> props.putIfAbsent(key, value) }
 
             systemProperties = props
             main = 'uk.co.real_logic.sbe.SbeTool'

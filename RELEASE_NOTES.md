@@ -1,3 +1,8 @@
+v0.0.8
+------
+
+ - Fix https://github.com/vontikov/sbe-gradle-plugin/issues/7
+
 v0.0.7
 ------
 

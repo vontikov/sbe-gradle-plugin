@@ -20,7 +20,7 @@ class UtilTest {
         def src = new Src(USER_DIR + '/src/test/resources/xml/util_all')
 
         def tree = Util.tree(project, src)
-		assertThat(3, equalTo(tree.size()))
+        assertThat(3, equalTo(tree.size()))
     }
 
     @Test
@@ -31,7 +31,7 @@ class UtilTest {
                 USER_DIR + '/src/test/resources/xml/util_some',
                 ['*.txt', '*.lst'])
         def tree = Util.tree(project, src)
-		assertThat(2, equalTo(tree.size()))
+        assertThat(2, equalTo(tree.size()))
     }
 
     @Test
@@ -42,7 +42,7 @@ class UtilTest {
                 [],
                 ['*.txt', '*.lst'])
         def tree = Util.tree(project, src)
-		assertThat(3, equalTo(tree.size()))
+        assertThat(3, equalTo(tree.size()))
     }
 
     @Test

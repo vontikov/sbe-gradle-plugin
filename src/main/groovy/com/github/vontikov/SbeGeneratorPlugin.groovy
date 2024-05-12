@@ -98,6 +98,9 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             main = 'uk.co.real_logic.sbe.SbeTool'
             args = input
             classpath = sbeClasspath
+
+            println "JavaExec systemProperties: ${props}"
+            println "JavaExec args: ${input}"
         }
     }
 

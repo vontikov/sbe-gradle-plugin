@@ -1,3 +1,9 @@
+v0.0.9
+------
+
+ - Upgrade to SBE 1.31.1
+ - Disable schema validation by default
+
 v0.0.8
 ------
 

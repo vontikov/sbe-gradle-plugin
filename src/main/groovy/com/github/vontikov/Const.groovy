@@ -2,7 +2,7 @@ package com.github.vontikov
 
 final class Const {
 
-    static final DEFAULT_SBE_VERSION = '1.29.0'
+    static final DEFAULT_SBE_VERSION = '1.31.1'
 
     static final PLUGIN_ID = 'sbe.generator'
     static final PLUGIN_GROUP = 'SBE Generator'
@@ -45,7 +45,7 @@ final class Const {
     static final DEFAULT_JAVA_SOURCE_COMPATIBILITY = '1.8'
     static final DEFAULT_JAVA_TARGET_COMPATIBILITY = '1.8'
 
-    static final DEFAULT_SHOULD_VALIDATE = true
+    static final DEFAULT_SHOULD_VALIDATE = false
 
     static final PROJECT_PROPERTY_SBE_VERSION = 'sbe_version'
 

@@ -22,7 +22,7 @@ Usage
 ```Groovy
 
 plugins {
-  id "com.github.vontikov.sbe-generator-plugin" version "0.0.8"
+  id "com.github.vontikov.sbe-generator-plugin" version "0.0.9"
 }
 ```
 
@@ -38,7 +38,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "com.github.vontikov:sbe-generator-plugin:0.0.8"
+    classpath "com.github.vontikov:sbe-generator-plugin:0.0.9"
   }
 }
 

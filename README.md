@@ -1,5 +1,5 @@
-[Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) plugin for [Gradle Build Tool](https://gradle.org/)
-------------------------------------------
+# [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) plugin for [Gradle Build Tool](https://gradle.org/)
+
 Runs [SBE Tool](https://github.com/real-logic/simple-binary-encoding/wiki/Sbe-Tool-Guide)
 in a Gradle project.
 
@@ -12,22 +12,20 @@ Compiled Java codecs are packed into a jar file.
 C++ codecs are delivered in a tarball, as a header-only
 [CMake](https://cmake.org/)-ready library.
 
-Plugin site: https://plugins.gradle.org/plugin/com.github.vontikov.sbe-generator-plugin
+Plugin site: <https://plugins.gradle.org/plugin/com.github.vontikov.sbe-generator-plugin>
 
-Usage
------
+## Usage
 
-#### Plugins DSL
+### Plugins DSL
 
 ```Groovy
 
 plugins {
-  id "com.github.vontikov.sbe-generator-plugin" version "0.0.9"
+  id "com.github.vontikov.sbe-generator-plugin" version "0.10.0"
 }
 ```
 
-#### Legacy plugin application
-
+### Legacy plugin application
 
 ```Groovy
 
@@ -38,14 +36,14 @@ buildscript {
     }
   }
   dependencies {
-    classpath "com.github.vontikov:sbe-generator-plugin:0.0.9"
+    classpath "com.github.vontikov:sbe-generator-plugin:0.10.0"
   }
 }
 
 apply plugin: "com.github.vontikov.sbe-generator-plugin"
 ```
 
-#### Full configuration
+### Full configuration
 
 ```Groovy
 
@@ -59,7 +57,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "com.github.vontikov:sbe-generator-plugin:0.0.5"
+    classpath "com.github.vontikov:sbe-generator-plugin:0.10.0"
   }
 }
 
@@ -95,18 +93,19 @@ For example:
 javaOptions = ['sbe.java.generate.interfaces': 'true', 'sbe.generate.ir': 'true']
 cppOptions = ['sbe.generate.ir': 'true']
 ```
+
 The full list of options is [here](https://github.com/real-logic/simple-binary-encoding/wiki/Sbe-Tool-Guide)
 
+### SBE version
 
-#### SBE version
-```
+```groovy
 #
 # gradle.properties
 #
-sbe_version=1.22.0
+sbe_version=1.36.2
 ```
 
-#### SBE Generator tasks
+### SBE Generator tasks
 
 | Task                  | Description                                |
 | --------------------- | ------------------------------------------ |
@@ -118,7 +117,6 @@ sbe_version=1.22.0
 | sbeCppArchive         | Packs generated C++ codecs                 |
 | sbeCppCmakeScripts    | Prepares C++ CMake scripts for SBE library |
 
-Example
-------------------------------------------
+### Example
 
-https://github.com/vontikov/sbe-example
+<https://github.com/vontikov/sbe-example>

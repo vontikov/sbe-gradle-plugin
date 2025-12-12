@@ -5,7 +5,7 @@ plugins {
   id 'idea'
   id 'maven-publish'
   id 'ivy-publish'
-  id 'com.gradle.plugin-publish' version '1.1.0'
+  id 'com.gradle.plugin-publish' version '1.2.1'
 }
 
 repositories {
@@ -16,8 +16,10 @@ repositories {
 group = artifact_group
 version = artifact_version
 
-sourceCompatibility = 1.17
-targetCompatibility = 1.17
+java {
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+}
 
 gradlePlugin {
   website = 'https://github.com/vontikov/sbe-gradle-plugin/'
@@ -69,6 +71,8 @@ test {
   useJUnitPlatform()
   testLogging {
     events "passed", "skipped", "failed"
+    exceptionFormat "full"
+    showStandardStreams = false
   }
 }
 

@@ -95,7 +95,7 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             opts.each { key, value -> props.putIfAbsent(key, value) }
 
             systemProperties = props
-            main = 'uk.co.real_logic.sbe.SbeTool'
+            mainClass = 'uk.co.real_logic.sbe.SbeTool'
             args = input
             classpath = sbeClasspath
 
@@ -155,7 +155,7 @@ class SbeGeneratorPlugin implements Plugin<Project> {
             opts.every { key, value -> props.putIfAbsent(key, value) }
 
             systemProperties = props
-            main = 'uk.co.real_logic.sbe.SbeTool'
+            mainClass = 'uk.co.real_logic.sbe.SbeTool'
             args = input
             classpath = sbeClasspath
         }

@@ -27,7 +27,6 @@ final class Util {
         project.repositories {
             mavenLocal()
             mavenCentral()
-            jcenter()
         }
         project.repositories.addAll(project.buildscript.repositories)
     }
